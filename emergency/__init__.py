@@ -9,7 +9,7 @@ def create_app(config_class=Config):
 #   from blueprints.patients.routes import patients
 #   from blueprints.doctors.routes import doctors
     from emergency.blueprints.main.routes import main
-#   from blueprints.rooms.routes import rooms
+    from emergency.blueprints.rooms.routes import emergency
 #   from blueprints.errors.handlers import errors
 #   from blueprints.admin.routes import admin
 
@@ -17,7 +17,7 @@ def create_app(config_class=Config):
 #   app.register_blueprint(doctors)
     app.register_blueprint(main)
 #   app.register_blueprint(errors)
-#   app.register_blueprint(rooms)
+    app.register_blueprint(emergency)
 #   app.register_blueprint(admin)
 
     return app
