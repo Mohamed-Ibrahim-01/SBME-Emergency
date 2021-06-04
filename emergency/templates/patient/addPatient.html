@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="clean-block clean-form dark">
+    <div class="container">
+        <div class="block-heading">
+            <h2 class="text-info">Add-Patient</h2>
+        </div>
+        <form method="POST" action="">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="name" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="subject">SSN</label>
+                <input class="form-control" type="text" id="subject" name="subject" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="subject">Phone</label>
+                <input class="form-control" type="text" id="subject-2" name="subject" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="subject">Address</label>
+                <input class="form-control" type="text" id="subject-1" name="subject" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="subject">Birth Date</label>
+                <input class="form-control" type="text" id="subject" name="subject" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="subject">Sex</label>
+                <input class="form-control" type="text" id="subject-4" name="subject" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="subject">Weight</label>
+                <input class="form-control" type="text" id="subject-3" name="subject" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="subject">Disease</label>
+                <input class="form-control" type="text" id="subject-5" name="subject" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="subject">Case</label>
+                <input class="form-control" type="text" id="subject-3" name="subject" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="subject">States</label>
+
+                <input class="form-control" type="text" id="subject-6" name="subject" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" type="email" id="email" name="email" />
+            </div>
+            <div id="submit_Buttom" class="mb-3">
+                <button class="btn btn-primary" type="submit" style="align-items: center">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock content %}
