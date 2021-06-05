@@ -6,55 +6,107 @@
             <h2 class="text-info">Add-Patient</h2>
         </div>
         <form method="POST" action="">
+            {{ form.hidden_tag() }}
             <div class="mb-3">
-                <label class="form-label" for="name">Name</label>
-                <input class="form-control" type="text" id="name" name="name" />
+                {{ form.Name.label(class="form-control-label") }}
+                {% if form.Name.errors %}
+                    {{ form.Name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Name(class="form-control form-control-lg") }}
+                {% endif %}
             </div>
-            <div class="mb-3">
-                <label class="form-label" for="subject">SSN</label>
-                <input class="form-control" type="text" id="subject" name="subject" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="subject">Phone</label>
-                <input class="form-control" type="text" id="subject-2" name="subject" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="subject">Address</label>
-                <input class="form-control" type="text" id="subject-1" name="subject" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="subject">Birth Date</label>
-                <input class="form-control" type="text" id="subject" name="subject" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="subject">Sex</label>
-                <input class="form-control" type="text" id="subject-4" name="subject" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="subject">Weight</label>
-                <input class="form-control" type="text" id="subject-3" name="subject" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="subject">Disease</label>
-                <input class="form-control" type="text" id="subject-5" name="subject" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="subject">Case</label>
-                <input class="form-control" type="text" id="subject-3" name="subject" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="subject">States</label>
 
-                <input class="form-control" type="text" id="subject-6" name="subject" />
-            </div>
             <div class="mb-3">
-                <label class="form-label" for="email">Email</label>
-                <input class="form-control" type="email" id="email" name="email" />
+                {{ form.Ssn.label(class="form-control-label") }}
+                {% if form.Ssn.errors %}
+                    {{ form.Ssn(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Ssn.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Ssn(class="form-control form-control-lg") }}
+                {% endif %}
             </div>
-            <div id="submit_Buttom" class="mb-3">
-                <button class="btn btn-primary" type="submit" style="align-items: center">
-                    Submit
-                </button>
+
+            <div class="mb-3">
+                {{ form.Phone.label(class="form-control-label") }}
+                {% if form.Phone.errors %}
+                    {{ form.Phone(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Phone.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Phone(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.Address.label(class="form-control-label") }}
+                {% if form.Address.errors %}
+                    {{ form.Address(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Address.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Address(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.BirthDate.label(class="form-control-label") }}
+                {% if form.BirthDate.errors %}
+                    {{ form.BirthDate(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.BirthDate.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.BirthDate(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.Sex.label(class="form-control-label") }}
+                {% if form.Sex.errors %}
+                    {{ form.Sex(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Sex.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Sex(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.Case.label(class="form-control-label") }}
+                {% if form.Case.errors %}
+                    {{ form.Case(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Case.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Case(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group text-center">
+                {{ form.Submit(class="btn btn-outline-primary") }}
             </div>
         </form>
     </div>

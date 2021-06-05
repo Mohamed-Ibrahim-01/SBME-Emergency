@@ -3,6 +3,7 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import EqualTo, Length, Email, DataRequired, ValidationError, Regexp
 
 class PatientForm(FlaskForm):
+    Ssn = StringField("Ssn",validators=[DataRequired(),Length(min=14,max=14)])
     Name = StringField("Name",validators=[DataRequired(),Length(min=2,max=50)])
 
     Phone = StringField("Phone",validators=[DataRequired(),Regexp("01[0-9]{9}",
@@ -16,4 +17,4 @@ class PatientForm(FlaskForm):
     Sex = StringField("Sex",validators=[DataRequired(),Length(min=4,max=6)])
     Case = StringField("Case",validators=[DataRequired(),Length(min=2,max=50)])
 
-    submit = SubmitField('Sign Up')
+    Submit = SubmitField('Sign Up')
