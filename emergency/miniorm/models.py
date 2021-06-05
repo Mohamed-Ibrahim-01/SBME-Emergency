@@ -29,4 +29,4 @@ class Patient:
     self.PatientSsn = PatientSsn
 
   def __repr__(self):
-    return f"Patient :: {self.PatientSsn},{self.Name},{self.Phone},{self.Sex},{self.Address},{self.MainQualification}"
+    return f"Patient :: {self.PatientSsn},{self.Name},{self.Phone},{self.Sex},{self.Address}"
