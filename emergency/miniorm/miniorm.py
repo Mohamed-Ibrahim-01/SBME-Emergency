@@ -1,21 +1,20 @@
-import emergency
-import mysql.connector, json
+import mysql.connector
 from emergency.miniorm.models import *
-from emergency.config import Config
+from flask import current_app
 
 mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  passwd= Config.DB_PASS,
-  database="emergency",
-  auth_plugin='mysql_native_password'
+    host=current_app.config['DB_HOST'],
+    user=current_app.config['DB_USER'],
+    passwd= current_app.config['DB_PASS'],
+    database=current_app.config['DB_NAME'],
+    auth_plugin=current_app.config['DB_AUTH']
 )
 
 mycursor = mydb.cursor()
 
 class miniorm:
 
-    def getAllDoctor():
+    def getAllDoctor(self):
         mycursor.execute("SELECT * FROM Doctor")
         fetchedDoctors = mycursor.fetchall()
         row_headers=[x[0] for x in mycursor.description] #this will extract row headers
@@ -23,7 +22,7 @@ class miniorm:
 
         return doctors
 
-    def getAllPatient():
+    def getAllPatient(self):
         mycursor.execute("SELECT * FROM Patient")
         fetchedPatients = mycursor.fetchall()
         row_headers=[x[0] for x in mycursor.description] #this will extract row headers
