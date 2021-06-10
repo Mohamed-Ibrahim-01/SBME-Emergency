@@ -13,8 +13,9 @@ class PatientForm(FlaskForm):
                             Regexp("[0-9]{2}\\/[0-9]{2}\\/[1|2][0-9]{3}",
                             message="Birth Date must be in format dd/mm/yyyy")])
 
-    Address = StringField("Address",validators=[DataRequired(),Length(min=10,max=50)])
+    Address = StringField("Address",validators=[DataRequired(),Length(min=6,max=50)])
     Sex = StringField("Sex",validators=[DataRequired(),Length(min=4,max=6)])
     Case = StringField("Case",validators=[DataRequired(),Length(min=2,max=50)])
+    Mail = StringField('Email', validators=[DataRequired(), Email()])
 
-    Submit = SubmitField('Sign Up')
+    Submit = SubmitField('Add')
