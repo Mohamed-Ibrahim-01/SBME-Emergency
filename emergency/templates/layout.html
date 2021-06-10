@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     {% if title %}
         <title>SBME Emergency - {{ title }}</title>
@@ -13,21 +13,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
 </head>
 
 <body>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="#">Brand</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" href="{{url_for(endpoint='main.home')}}">SBME-EMERGENCY</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html" style="filter: contrast(20%);">cONTACT US</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about-us.html" style="filter: contrast(100%);">EMERGENCY</a></li>
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" href="{{url_for(endpoint='main.home')}}" >HOME</a>
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" href="{{url_for(endpoint='emergency.overview')}}" >EMERGENCY</a>
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" href="{{url_for(endpoint='main.contactUs')}}" >CONTACT US</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav><input type="text">
+
     {% block content %}{% endblock %}
+
+    <footer class="page-footer dark" style="padding:0">
+        <div class="footer-copyright" style="margin:0">
+            <p>© 2021 SBME Copyright</p>
+        </div>
+    </footer>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="../../dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
 
 </html>
