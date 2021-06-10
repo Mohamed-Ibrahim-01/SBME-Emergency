@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{{ data }}
-</body>
-</html>
+{% extends "layout.html" %}
+{% block content %}
+  <main class="page landing-page">
+    <section class="clean-block clean-hero home-bg" style="background-image: url({{ url_for('static', filename='img/bg.jpg') }});">
+      <div class="text">
+        <h2>At your service !</h2>
+        <p>We make you a personalized hospital release note from the hospital
+          of your choice. Comes complete with dates and description of visit,
+          expected date to return to work, and doctor's signature.</p>
+        <button class="btn btn-outline-light btn-lg my-btn" type="button">
+          <a class="contact-btn" href="{{url_for(endpoint='main.contactUs')}}">Contact Us</a>
+        </button>
+      </div>
+    </section>
+  </main>
+{% endblock content %}
