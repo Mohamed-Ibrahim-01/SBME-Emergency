@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container " style="padding-top: 12vh;">
+        <div class="row" data-masonry='{"percentPosition": true }'>
+          {% for message in messages%} 
+            <div class="m-3 px-0  text-dark text-dark bg-light col-sm-6 col-lg-4" >
+              <div class="card-header">{{message.Name}}</div>
+              <div class="card-body">
+                <h5 class="card-title">{{message.Subject}}</h5>
+                <p class="card-text"> {{message.Message}} </p>
+              </div>
+            </div>
+          {% endfor %}
+
+        </div>
+    </div>
+{% endblock content %}
