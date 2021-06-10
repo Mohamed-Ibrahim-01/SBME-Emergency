@@ -1,8 +1,13 @@
 click==8.0.0
+dnspython==2.1.0
+email-validator==1.1.2
 Flask==2.0.0
+Flask-WTF==0.15.1
+idna==3.2
 itsdangerous==2.0.0
 Jinja2==3.0.0
 MarkupSafe==2.0.0
 mysql-connector==2.2.9
 python-dotenv==0.17.1
 Werkzeug==2.0.0
+WTForms==2.3.3
