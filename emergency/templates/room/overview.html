@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% block content %}
+  <main class="page landing-page clean-block clean-form dark"> 
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info"></h2> 
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <h4 class="text-info" style="display:inline-block;">Doctors</h4> 
+        </div>
+      </div>
+      <div style="margin-right: 50px;margin-left: 50px;">
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr id="header">
+                <th>SSN</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Sex</th>
+                <th>Birth Date</th>
+                <th>Room Num</th>
+                <th>Main Qualification</th>
+                <th>Extra Qualification</th>
+              </tr>
+              {% for doctor in data["doctors"] %}
+                <tr>
+                  <td> {{doctor.DoctorSsn}} </td>
+                  <td> {{doctor.Name}}</td>
+                  <td> {{doctor.Phone}}</td>
+                  <td> {{doctor.Email}}</td>
+                  <td> {{doctor.Address}}</td>
+                  <td> {{doctor.Sex}}</td>
+                  <td> {{doctor.BirthDate}}</td>
+                  <td> {{doctor.doctor_to_room}}</td>
+                  <td> {{doctor.MainQualification}}</td>
+                  <td> {{doctor.ExtraQualification}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center" style="justify-content:center">
+          <a href= "{{url_for(endpoint='emergency.addDoctor')}}" style="display:inline-block">
+            <div class="plus radius" style="--l:35px;--t:3px;--c2:rgb(10,156,238)"></div>
+          </a>
+        </div>
+      </div>
+      <div class="block-heading">
+        <h2 class="text-info"></h2> 
+      </div>
+      <div class="col text-center">
+        <h4 class="text-info" style="display:inline-block;">Patients</h4> 
+      </div>
+      <div style="margin-right: 50px;margin-left: 50px;">
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr id="header">
+                <th>SSN</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Sex</th>
+                <th>Patient Case</th>
+                <th>Email</th>
+                <th>Birth Date</th>
+              </tr>
+              {% for patient in data["patients"] %}
+                <tr>
+                  <td> {{patient.PatientSsn}} </td>
+                  <td> {{patient.Name}}</td>
+                  <td> {{patient.Phone}}</td>
+                  <td> {{patient.Address}}</td>
+                  <td> {{patient.Sex}}</td>
+                  <td> {{patient.PatientCase}}</td>
+                  <td> {{patient.Email}}</td>
+                  <td> {{patient.BirthDate}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col text-center" style="justify-content:center">
+        <a href= "{{url_for(endpoint='emergency.addPatient')}}" style="display:inline-block">
+          <div class="plus radius" style="--l:35px;--t:3px;--c2:rgb(10,156,238)"></div>
+        </a>
+      </div>
+    </main>
+  </div>
+{% endblock content %}
