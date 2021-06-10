@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="clean-block clean-form dark">
+    <div class="container">
+        <div class="block-heading">
+            <h2 class="text-info">Add-Doctor</h2>
+        </div>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                {{ form.Name.label(class="form-control-label") }}
+                {% if form.Name.errors %}
+                    {{ form.Name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Name(class="form-control form-control-lg") }}
+                    <p>Good boy</p>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.Ssn.label(class="form-control-label") }}
+                {% if form.Ssn.errors %}
+                    {{ form.Ssn(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Ssn.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Ssn(class="form-control form-control-lg") }}
+                    <p>Good boy</p>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.Phone.label(class="form-control-label") }}
+                {% if form.Phone.errors %}
+                    {{ form.Phone(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Phone.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Phone(class="form-control form-control-lg") }}
+                    <p>Good boy</p>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.Mail.label(class="form-control-label") }}
+                {% if form.Mail.errors %}
+                    {{ form.Mail(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Mail.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Mail(class="form-control form-control-lg") }}
+                    <p>Good boy</p>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.Address.label(class="form-control-label") }}
+                {% if form.Address.errors %}
+                    {{ form.Address(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Address.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Address(class="form-control form-control-lg") }}
+                    <p>Good boy</p>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.RoomNum.label(class="form-control-label") }}
+                {% if form.RoomNum.errors %}
+                    {{ form.RoomNum(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.RoomNum.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.RoomNum(class="form-control form-control-lg") }}
+                    <p>Good boy</p>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.BirthDate.label(class="form-control-label") }}
+                {% if form.BirthDate.errors %}
+                    {{ form.BirthDate(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.BirthDate.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.BirthDate(class="form-control form-control-lg") }}
+                    <p>Good boy</p>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.Sex.label(class="form-control-label") }}
+                {% if form.Sex.errors %}
+                    {{ form.Sex(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Sex.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Sex(class="form-control form-control-lg") }}
+                    <p>Good boy</p>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.MainQualification.label(class="form-control-label") }}
+                {% if form.MainQualification.errors %}
+                    {{ form.MainQualification(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.MainQualification.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.MainQualification(class="form-control form-control-lg") }}
+                    <p>Good boy</p>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.ExtraQualification.label(class="form-control-label") }}
+                {% if form.ExtraQualification.errors %}
+                    {{ form.ExtraQualification(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.ExtraQualification.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.ExtraQualification(class="form-control form-control-lg") }}
+                    <p>Good boy</p>
+                {% endif %}
+            </div>
+
+            <div class="form-group text-center">
+                {{ form.Submit(class="btn btn-outline-primary") }}
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock content %}
