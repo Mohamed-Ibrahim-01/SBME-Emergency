@@ -7,14 +7,17 @@ class DoctorForm(FlaskForm):
     Name = StringField("Name",validators=[DataRequired(),Length(min=2,max=50)])
 
     Phone = StringField("Phone",validators=[DataRequired(),Regexp("01[0-9]{9}",
-                        "Write a valid EG phone number",None)])
+                        message="Write a valid EG phone number")])
 
     BirthDate = StringField("BirthDate",validators=[DataRequired(),
                             Regexp("[0-9]{2}\\/[0-9]{2}\\/[1|2][0-9]{3}",
-                            "Birth Date must be in format dd/mm/yyyy",None)])
+                            message="Birth Date must be in format dd/mm/yyyy")])
 
-    Address = StringField("Address",validators=[DataRequired(),Length(min=10,max=50)])
+    Address = StringField("Address",validators=[DataRequired(),Length(min=4,max=50)])
     Sex = StringField("Sex",validators=[DataRequired(),Length(min=4,max=6)])
-    Qualification = StringField("Qualification",validators=[DataRequired(),Length(min=10,max=50)])
+    MainQualification = StringField("Main Qualification",validators=[DataRequired(),Length(min=6,max=50)])
+    ExtraQualification = StringField("Extra Qualification",validators=[DataRequired(),Length(min=4,max=50)])
+    Mail = StringField('Email', validators=[DataRequired(), Email()])
+    RoomNum = StringField('Room Num', validators=[DataRequired()])
 
-    submit = SubmitField('Sign Up')
+    Submit = SubmitField('Add')
