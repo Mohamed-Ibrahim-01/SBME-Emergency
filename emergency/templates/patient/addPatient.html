@@ -64,6 +64,20 @@
             </div>
 
             <div class="mb-3">
+                {{ form.Mail.label(class="form-control-label") }}
+                {% if form.Mail.errors %}
+                    {{ form.Mail(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Mail.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Mail(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
                 {{ form.BirthDate.label(class="form-control-label") }}
                 {% if form.BirthDate.errors %}
                     {{ form.BirthDate(class="form-control form-control-lg is-invalid") }}
