@@ -9,5 +9,5 @@ Jinja2==3.0.0
 MarkupSafe==2.0.0
 mysql-connector==2.2.9
 python-dotenv==0.17.1
-Werkzeug==2.0.0
+Werkzeug==2.2.3
 WTForms==2.3.3
